@@ -26,8 +26,8 @@ checkOneM v =
                 m <- get
                 case DMA.lookup v m of
                           Nothing -> do 
-                                       s <- checkOneM (ssqr v)
-                                       modify (DMA.insert v s) 
+                                       s <- checkOneM $ ssd n
+                                       modify (DMA.insert n s) 
                                        return s
                           Just found -> return found
 
